@@ -6,15 +6,130 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>420</width>
+    <height>452</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>SIGN IN</string>
+      </property>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>330</y>
+         <width>149</width>
+         <height>69</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>DONT HAVE ACCOUNT</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_signup">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>350</y>
+         <width>133</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>SIGNUP</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>30</y>
+         <width>135</width>
+         <height>191</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QLineEdit" name="LINEDIT_USERNAME"/>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="linedit_password"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QPushButton" name="pushbutton_forget">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>300</y>
+         <width>221</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>FORGET YOUR PASSWORD</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_login">
+       <property name="geometry">
+        <rect>
+         <x>134</x>
+         <y>240</y>
+         <width>121</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>LOGIN</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>40</y>
+         <width>151</width>
+         <height>181</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>USERNAME:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>PASSWORD:</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>420</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
