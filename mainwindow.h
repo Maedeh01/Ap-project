@@ -19,6 +19,8 @@ public:
 private slots:
     void on_pushbutton_forget_clicked();
 
+    void on_pushButton_signup_clicked();
+
 private:
     Ui::MainWindow *ui;
     forgot *forget;
