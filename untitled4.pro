@@ -9,17 +9,23 @@ QT +=network
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    firstlist.cpp \
     forgot.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    signup.cpp
 
 HEADERS += \
+    firstlist.h \
     forgot.h \
-    mainwindow.h
+    mainwindow.h \
+    signup.h
 
 FORMS += \
+    firstlist.ui \
     forgot.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    signup.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

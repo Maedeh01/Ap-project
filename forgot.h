@@ -12,7 +12,7 @@ class forgot : public QDialog
     Q_OBJECT
 
 public:
-    explicit forgot(QWidget *parent = nullptr);
+    explicit forgot(QWidget *parent = nullptr,QString titletext=nullptr,QString massagetext=nullptr);
     ~forgot();
 
 private:

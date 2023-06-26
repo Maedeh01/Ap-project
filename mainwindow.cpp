@@ -8,8 +8,13 @@
 #include <QDebug>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QString>
+QString username,firstname,lastname,password;
+
 QNetworkAccessManager * manager;
 QNetworkRequest request;
+//QNetworkReply *reply = manage; // Send GET request
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -40,7 +45,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushbutton_forget_clicked()
 {
     hide();
-    forget = new forgot(this);
+    forget = new forgot(this,"forget your password?","Hahahahahahaha sooooorryyyyy!!!!!!");
     forget->show();
     forget->exec();
 }
@@ -48,7 +53,9 @@ void MainWindow::on_pushbutton_forget_clicked()
 
 void MainWindow::on_pushButton_signup_clicked()
 {
-    request.setUrl(QUrl("http://api.barafardayebehtar.ml:8080/signup?username=sara&password=1234&firstname=sara&lastname=baradaran"));
-        manager->get(request);
+    hide();
+    signup=new Signup(this);
+    signup->show();
+    signup->exec();
 }
 
