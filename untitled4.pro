@@ -9,21 +9,24 @@ QT +=network
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    firstlist.cpp \
     forgot.cpp \
+    logout.cpp \
     main.cpp \
+    mainpage.cpp \
     mainwindow.cpp \
     signup.cpp
 
 HEADERS += \
-    firstlist.h \
     forgot.h \
+    logout.h \
+    mainpage.h \
     mainwindow.h \
     signup.h
 
 FORMS += \
-    firstlist.ui \
     forgot.ui \
+    logout.ui \
+    mainpage.ui \
     mainwindow.ui \
     signup.ui
 

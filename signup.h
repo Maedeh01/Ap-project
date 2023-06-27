@@ -2,7 +2,7 @@
 #define SIGNUP_H
 
 #include <QDialog>
-#include "firstlist.h"
+#include "mainpage.h"
 #include "forgot.h"
 
 namespace Ui {
@@ -22,7 +22,7 @@ private slots:
 
 private:
     Ui::Signup *ui;
-    firstList *firstlist;
+    mainpage *Mainpage;
     forgot *forget2;
 };
 

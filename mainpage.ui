@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainpage</class>
+ <widget class="QMainWindow" name="mainpage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Contact</string>
+    </property>
+    <addaction name="actionContacts_list"/>
+    <addaction name="actionShow_my_chat"/>
+   </widget>
+   <widget class="QMenu" name="menuChannel">
+    <property name="title">
+     <string>Channel</string>
+    </property>
+    <addaction name="actionCreate"/>
+    <addaction name="actionJoin"/>
+    <addaction name="actionChannels_list"/>
+    <addaction name="actionChannel_messages"/>
+    <addaction name="actionSend_message"/>
+   </widget>
+   <widget class="QMenu" name="menuGroup">
+    <property name="title">
+     <string>Group</string>
+    </property>
+    <addaction name="actionCreate_2"/>
+    <addaction name="actionJoin_2"/>
+    <addaction name="actionMy_groups"/>
+    <addaction name="actionMy_group_messages"/>
+    <addaction name="actionSend_message_2"/>
+   </widget>
+   <widget class="QMenu" name="menuLog_out">
+    <property name="title">
+     <string>Hey!Welcome:)</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuExit">
+    <property name="title">
+     <string>Exit</string>
+    </property>
+    <addaction name="actionLogout"/>
+   </widget>
+   <addaction name="menuLog_out"/>
+   <addaction name="menu"/>
+   <addaction name="menuChannel"/>
+   <addaction name="menuGroup"/>
+   <addaction name="menuExit"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionContacts_list">
+   <property name="text">
+    <string>Send message</string>
+   </property>
+  </action>
+  <action name="actionShow_my_chat">
+   <property name="text">
+    <string>Show my chat </string>
+   </property>
+  </action>
+  <action name="actionCreate">
+   <property name="text">
+    <string>Create </string>
+   </property>
+  </action>
+  <action name="actionJoin">
+   <property name="text">
+    <string>Join</string>
+   </property>
+  </action>
+  <action name="actionChannels_list">
+   <property name="text">
+    <string>My channels</string>
+   </property>
+  </action>
+  <action name="actionChannel_messages">
+   <property name="text">
+    <string>My channel messages</string>
+   </property>
+  </action>
+  <action name="actionSend_message">
+   <property name="text">
+    <string>Send message </string>
+   </property>
+  </action>
+  <action name="actionCreate_2">
+   <property name="text">
+    <string>Create</string>
+   </property>
+  </action>
+  <action name="actionJoin_2">
+   <property name="text">
+    <string>Join</string>
+   </property>
+  </action>
+  <action name="actionMy_groups">
+   <property name="text">
+    <string>My groups</string>
+   </property>
+  </action>
+  <action name="actionMy_group_messages">
+   <property name="text">
+    <string>My group messages</string>
+   </property>
+  </action>
+  <action name="actionSend_message_2">
+   <property name="text">
+    <string>Send message</string>
+   </property>
+  </action>
+  <action name="actionLogout">
+   <property name="text">
+    <string>Logout</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

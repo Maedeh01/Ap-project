@@ -59,3 +59,37 @@ void MainWindow::on_pushButton_signup_clicked()
     signup->exec();
 }
 
+
+void MainWindow::on_pushButton_login_clicked()
+{
+    username=ui->LINEDIT_USERNAME->text();
+    password=ui->linedit_password->text();
+    request.setUrl(QUrl("http://api.barafardayebehtar.ml:8080/login?username="+username+"&password="+password));
+    QByteArray data = manager->get(request)->readAll();
+    QJsonDocument jsonDoc = QJsonDocument::fromJson(data);
+    QJsonObject jsonObj = jsonDoc.object();
+    double code = jsonObj.value("code").toDouble();
+    qDebug() << code;
+    if( code == 200 ){
+        //go to list.
+        hide();
+      Mainpage1 = new mainpage(this);
+        Mainpage1 ->show();
+        //Mainpage1 ->exec();
+    }
+    else if (code==401){
+        QString mass = jsonObj.value("message").toString();
+        hide();
+        forget = new forgot(this,"Error","The information you've entered is wrong!");
+        forget->show();
+        forget->exec();
+    }
+    else if (code==404){
+        QString mass = jsonObj.value("message").toString();
+        hide();
+        forget = new forgot(this,"Error","This user was'nt found!");
+        forget->show();
+        forget->exec();
+    }
+}
+

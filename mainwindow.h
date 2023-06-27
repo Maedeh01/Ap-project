@@ -29,10 +29,12 @@ private slots:
 
     void on_pushButton_signup_clicked();
 
+    void on_pushButton_login_clicked();
+
 private:
     Ui::MainWindow *ui;
     forgot *forget;
     Signup *signup;
-//    firstList *firstlist;
+      mainpage *Mainpage1;
 };
 #endif // MAINWINDOW_H

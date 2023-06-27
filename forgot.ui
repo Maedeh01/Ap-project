@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>240</width>
+    <width>268</width>
     <height>156</height>
    </rect>
   </property>
@@ -18,9 +18,14 @@
     <rect>
      <x>30</x>
      <y>11</y>
-     <width>181</width>
+     <width>201</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MV Boli</family>
+    </font>
    </property>
    <property name="text">
     <string>TextLabel</string>
@@ -31,9 +36,14 @@
     <rect>
      <x>60</x>
      <y>50</y>
-     <width>121</width>
+     <width>191</width>
      <height>81</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MV Boli</family>
+    </font>
    </property>
    <property name="text">
     <string>TextLabel</string>

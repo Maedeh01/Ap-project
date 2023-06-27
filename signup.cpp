@@ -31,11 +31,11 @@ void Signup::on_pushButton_ok_Signup_clicked()
     double code = jsonObj.value("code").toDouble();
     qDebug() << code;
     if( code == 200 ){
-        //go to list.
+        //go to mainpage of mesenger
         hide();
-        firstlist = new firstList(this);
-        firstlist->show();
-        firstlist->exec();
+        Mainpage = new mainpage(this);
+        Mainpage ->show();
+        //Mainpage ->exec();
     }
     else{
         QString mass = jsonObj.value("message").toString();
