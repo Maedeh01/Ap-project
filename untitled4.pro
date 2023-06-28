@@ -10,6 +10,7 @@ QT +=network
 
 SOURCES += \
     forgot.cpp \
+    join.cpp \
     logout.cpp \
     main.cpp \
     mainpage.cpp \
@@ -18,6 +19,7 @@ SOURCES += \
 
 HEADERS += \
     forgot.h \
+    join.h \
     logout.h \
     mainpage.h \
     mainwindow.h \
@@ -25,6 +27,7 @@ HEADERS += \
 
 FORMS += \
     forgot.ui \
+    join.ui \
     logout.ui \
     mainpage.ui \
     mainwindow.ui \

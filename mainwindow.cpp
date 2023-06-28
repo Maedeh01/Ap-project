@@ -9,11 +9,10 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QString>
-QString username,firstname,lastname,password;
+QString username,firstname,lastname,password,token;
 
 QNetworkAccessManager * manager;
 QNetworkRequest request;
-//QNetworkReply *reply = manage; // Send GET request
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -70,7 +69,7 @@ void MainWindow::on_pushButton_login_clicked()
     QJsonObject jsonObj = jsonDoc.object();
     double code = jsonObj.value("code").toDouble();
     qDebug() << code;
-    if( code == 200 ){
+    if( code == 200.0 ){
         //go to list.
         hide();
       Mainpage1 = new mainpage(this);
@@ -80,14 +79,14 @@ void MainWindow::on_pushButton_login_clicked()
     else if (code==401){
         QString mass = jsonObj.value("message").toString();
         hide();
-        forget = new forgot(this,"Error","The information you've entered is wrong!");
+        forget = new forgot(this,"Error","message");
         forget->show();
         forget->exec();
     }
     else if (code==404){
         QString mass = jsonObj.value("message").toString();
         hide();
-        forget = new forgot(this,"Error","This user was'nt found!");
+        forget = new forgot(this,"Error","message");
         forget->show();
         forget->exec();
     }

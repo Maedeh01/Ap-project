@@ -21,3 +21,21 @@ void mainpage::on_actionLogout_triggered()
     logout->exec();
 }
 
+
+void mainpage::on_actionJoin_2_triggered()
+{
+    hide();
+    Join2 = new join(this,"Group");
+    Join2->show();
+    Join2->exec();
+}
+
+
+void mainpage::on_actionJoin_triggered()
+{
+    hide();
+    Join2 = new join (this,"Channel");
+    Join2->show();
+    Join2->exec();
+}
+

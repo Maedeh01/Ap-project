@@ -35,6 +35,6 @@ private:
     Ui::MainWindow *ui;
     forgot *forget;
     Signup *signup;
-      mainpage *Mainpage1;
+    mainpage *Mainpage1;
 };
 #endif // MAINWINDOW_H
