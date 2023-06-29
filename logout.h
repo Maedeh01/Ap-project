@@ -2,6 +2,7 @@
 #define LOGOUT_H
 
 #include <QDialog>
+#include "forgot.h"
 
 namespace Ui {
 class Logout;
@@ -20,6 +21,7 @@ private slots:
 
 private:
     Ui::Logout *ui;
+    forgot *Forgot;
 };
 
 #endif // LOGOUT_H

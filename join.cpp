@@ -10,8 +10,8 @@
 #include <QString>
 
 extern QString username,firstname,lastname,password,token;
-extern QNetworkAccessManager * manager;
-extern QNetworkRequest request;
+extern QEventLoop eventLoop;//new
+extern QNetworkAccessManager mgr;//new
 
 join::join(QWidget *parent, QString lable) :
     QDialog(parent),
@@ -29,30 +29,63 @@ join::~join()
 
 void join::on_pushButton_join_clicked()
 {
+    QString code,message;
     if( type == "Group"){
     QString name_group = ui->lineEdit_name_to_join->text();
-    request.setUrl(QUrl("http://api.barafardayebehtar.ml:8080/joingroup?token="+ token +"&group_name="+name_group));
-    QByteArray data = manager->get(request)->readAll();
-    QJsonDocument jsonDoc = QJsonDocument::fromJson(data);
-    QJsonObject jsonObj = jsonDoc.object();
-    double code = jsonObj.value("code").toDouble();
-    QString massage = jsonObj.value("massage").toString();
+        QObject::connect(&mgr, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
+        QNetworkRequest req( QUrl( QString("http://api.barafardayebehtar.ml:8080/joingroup?token=" +token +"&group_name="+name_group) ) );
+        QNetworkReply *reply = mgr.get(req);
+        eventLoop.exec(); // blocks stack until "finished()" has been called
+
+        if (reply->error() == QNetworkReply::NoError) {
+
+            QString strReply = (QString)reply->readAll();
+
+            //parse json
+            qDebug() << "Response:" << strReply;
+            QJsonDocument jsonResponse = QJsonDocument::fromJson(strReply.toUtf8());
+
+            QJsonObject jsonObj = jsonResponse.object();
+            code = jsonObj["code"].toString();
+            message = jsonObj["message"].toString();
+            delete reply;
+        }
+        else {
+            //failure
+            qDebug() << "Failure" <<reply->errorString();
+            delete reply;
+        }
     hide();
-    forget3 = new forgot(this, "Join",massage);
+    forget3 = new forgot(this, "Join",message);
     forget3->show();
     forget3->exec();
     hide();
     }
     if( type == "Channel"){
     QString name_channel = ui->lineEdit_name_to_join->text();
-    request.setUrl(QUrl("http://api.barafardayebehtar.ml:8080/joinchannel?token=" + token + "&channel_name="+ name_channel));
-    QByteArray data = manager->get(request)->readAll();
-    QJsonDocument jsonDoc = QJsonDocument::fromJson(data);
-    QJsonObject jsonObj = jsonDoc.object();
-    double code = jsonObj.value("code").toDouble();
-    QString massage = jsonObj.value("massage").toString();
+    QObject::connect(&mgr, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
+    QNetworkRequest req( QUrl( QString("http://api.barafardayebehtar.ml:8080/joinchannel?token=" + token + "&channel_name="+ name_channel) ) );
+    QNetworkReply *reply = mgr.get(req);
+    eventLoop.exec(); // blocks stack until "finished()" has been called
+
+    if (reply->error() == QNetworkReply::NoError) {
+
+            QString strReply = (QString)reply->readAll();
+
+            //parse json
+            qDebug() << "Response:" << strReply;
+            QJsonDocument jsonResponse = QJsonDocument::fromJson(strReply.toUtf8());
+
+            QJsonObject jsonObj = jsonResponse.object();
+            code = jsonObj["code"].toString();
+            message = jsonObj["message"].toString();
+    }
+    else {
+            //failure
+            qDebug() << "Failure" <<reply->errorString();
+    }
     hide();
-    forget3 = new forgot(this, "Join",massage);
+    forget3 = new forgot(this, "Join",message);
     forget3->show();
     forget3->exec();
     hide();

@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-//#include "QNetworkAccessManager"
+#include "QNetworkAccessManager"
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
 #include <QNetworkReply>
@@ -9,35 +9,22 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QString>
-QString username,firstname,lastname,password,token;
 
-QNetworkAccessManager * manager;
-QNetworkRequest request;
+QString username,firstname,lastname,password,token;
+QEventLoop eventLoop;//new
+QNetworkAccessManager mgr;//new
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    manager = new QNetworkAccessManager();
-       QObject::connect(manager, &QNetworkAccessManager::finished,
-           this, [=](QNetworkReply *reply) {
-               if (reply->error()) {
-                   qDebug() << reply->errorString();
-                   return;
-               }
 
-               QString answer = reply->readAll();
-
-               qDebug() << answer;
-           }
-       );
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-    delete manager;
 }
 
 
@@ -61,32 +48,51 @@ void MainWindow::on_pushButton_signup_clicked()
 
 void MainWindow::on_pushButton_login_clicked()
 {
+    QString code,message;
     username=ui->LINEDIT_USERNAME->text();
     password=ui->linedit_password->text();
-    request.setUrl(QUrl("http://api.barafardayebehtar.ml:8080/login?username="+username+"&password="+password));
-    QByteArray data = manager->get(request)->readAll();
-    QJsonDocument jsonDoc = QJsonDocument::fromJson(data);
-    QJsonObject jsonObj = jsonDoc.object();
-    double code = jsonObj.value("code").toDouble();
-    qDebug() << code;
-    if( code == 200.0 ){
+    QObject::connect(&mgr, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
+    QNetworkRequest req( QUrl( QString("http://api.barafardayebehtar.ml:8080/login?username="+username+"&password="+password) ) );
+    QNetworkReply *reply = mgr.get(req);
+    eventLoop.exec(); // blocks stack until "finished()" has been called
+
+    if (reply->error() == QNetworkReply::NoError) {
+
+        QString strReply = (QString)reply->readAll();
+
+        //parse json
+        qDebug() << "Response:" << strReply;
+        QJsonDocument jsonResponse = QJsonDocument::fromJson(strReply.toUtf8());
+
+        QJsonObject jsonObj = jsonResponse.object();
+        code = jsonObj["code"].toString();
+        message = jsonObj["message"].toString();
+        token = jsonObj["token"].toString();
+        qDebug() << "token:" << token;
+        delete reply;
+    }
+    else {
+        //failure
+        qDebug() << "Failure" <<reply->errorString();
+        delete reply;
+    }
+
+    if( code == "200" ){
         //go to list.
         hide();
-      Mainpage1 = new mainpage(this);
+       Mainpage1 = new mainpage(this);
         Mainpage1 ->show();
         //Mainpage1 ->exec();
     }
-    else if (code==401){
-        QString mass = jsonObj.value("message").toString();
+    else if (code == "401" ){
         hide();
-        forget = new forgot(this,"Error","message");
+        forget = new forgot(this,"Error",message);
         forget->show();
         forget->exec();
     }
-    else if (code==404){
-        QString mass = jsonObj.value("message").toString();
+    else if (code == "404" ){
         hide();
-        forget = new forgot(this,"Error","message");
+        forget = new forgot(this,"Error",message);
         forget->show();
         forget->exec();
     }
