@@ -39,3 +39,30 @@ void mainpage::on_actionJoin_triggered()
     Join2->exec();
 }
 
+
+void mainpage::on_actionContacts_send_triggered()
+{
+    hide();
+    send_message = new Send_message(this,"user");
+    send_message->show();
+    send_message->exec();
+}
+
+
+void mainpage::on_actionSend_message_triggered()
+{
+    hide();
+    send_message = new Send_message(this,"channel");
+    send_message->show();
+    send_message->exec();
+}
+
+
+void mainpage::on_actionSend_message_2_triggered()
+{
+    hide();
+    send_message = new Send_message(this,"group");
+    send_message->show();
+    send_message->exec();
+}
+

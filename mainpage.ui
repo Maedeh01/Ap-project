@@ -27,7 +27,7 @@
     <property name="title">
      <string>Contact</string>
     </property>
-    <addaction name="actionContacts_list"/>
+    <addaction name="actionContacts_send"/>
     <addaction name="actionShow_my_chat"/>
    </widget>
    <widget class="QMenu" name="menuChannel">
@@ -68,7 +68,7 @@
    <addaction name="menuExit"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionContacts_list">
+  <action name="actionContacts_send">
    <property name="text">
     <string>Send message</string>
    </property>

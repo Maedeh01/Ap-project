@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include "logout.h"
 #include "join.h"
+#include "send_message.h"
+
 
 namespace Ui {
 class mainpage;
@@ -24,10 +26,17 @@ private slots:
 
     void on_actionJoin_triggered();
 
+    void on_actionContacts_send_triggered();
+
+    void on_actionSend_message_triggered();
+
+    void on_actionSend_message_2_triggered();
+
 private:
     Ui::mainpage *ui;
     Logout *logout;
     join *Join2;
+    Send_message *send_message;
 };
 
 #endif // MAINPAGE_H
