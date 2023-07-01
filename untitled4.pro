@@ -10,6 +10,7 @@ QT +=network
 
 SOURCES += \
     createchannel.cpp \
+    creategroup.cpp \
     forgot.cpp \
     join.cpp \
     logout.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
 
 HEADERS += \
     createchannel.h \
+    creategroup.h \
     forgot.h \
     join.h \
     logout.h \
@@ -31,6 +33,7 @@ HEADERS += \
 
 FORMS += \
     createchannel.ui \
+    creategroup.ui \
     forgot.ui \
     join.ui \
     logout.ui \

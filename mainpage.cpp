@@ -74,3 +74,11 @@ void mainpage::on_actionCreate_triggered()
     Createchannel->exec();
 }
 
+
+void mainpage::on_actionCreate_2_triggered()
+{
+    Creategroup=new creategroup(this);
+    Creategroup->show();
+    Creategroup->exec();
+}
+
