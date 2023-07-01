@@ -7,6 +7,7 @@
 #include "send_message.h"
 #include "createchannel.h"
 #include "creategroup.h"
+#include"getuserlist.h"
 namespace Ui {
 class mainpage;
 }
@@ -36,6 +37,8 @@ private slots:
 
     void on_actionCreate_2_triggered();
 
+    void on_actionShow_my_chat_triggered();
+
 private:
     Ui::mainpage *ui;
     Logout *logout;
@@ -43,6 +46,7 @@ private:
     Send_message *send_message;
     createchannel*Createchannel;
     creategroup*Creategroup;
+    getuserlist*Getuserlist;
 };
 
 #endif // MAINPAGE_H

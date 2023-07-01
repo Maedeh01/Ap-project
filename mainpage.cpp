@@ -82,3 +82,11 @@ void mainpage::on_actionCreate_2_triggered()
     Creategroup->exec();
 }
 
+
+void mainpage::on_actionShow_my_chat_triggered()
+{
+    Getuserlist=new getuserlist(this);
+    Getuserlist->show();
+    Getuserlist->exec();
+}
+

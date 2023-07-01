@@ -1,3 +1,5 @@
+#include "getuserlist.h"
+#include "ui_getuserlist.h"
 #include "creategroup.h"
 #include "ui_creategroup.h"
 #include "createchannel.h"
@@ -10,30 +12,29 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QString>
+#include<QDir>
+#include<qfileinfo.h>
 
-extern QString username,firstname,lastname,password,token;
+extern QString token;
 extern QEventLoop eventLoop;//new
 extern QNetworkAccessManager mgr;//new
-creategroup::creategroup(QWidget *parent) :
+getuserlist::getuserlist(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::creategroup)
+    ui(new Ui::getuserlist)
 {
     ui->setupUi(this);
 }
 
-creategroup::~creategroup()
+getuserlist::~getuserlist()
 {
     delete ui;
 }
 
-void creategroup::on_pushButton_create_group_clicked()
+void getuserlist::on_pushButton_show_userlist_clicked()
 {
-    QString group_name,group_title;
-    group_name=ui->lineEdit_group_name->text();
-    group_title=ui->lineEdit_group_title->text();
     QString code,message;
     QObject::connect(&mgr, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
-    QNetworkRequest req( QUrl( QString("http://api.barafardayebehtar.ml:8080/creategroup?token="+token+"&group_name="+group_name+"&group_title="+group_title) ) );
+    QNetworkRequest req( QUrl( QString("http://api.barafardayebehtar.ml:8080/getuserlist?token="+token) ) );
     QNetworkReply *reply = mgr.get(req);
     eventLoop.exec(); // blocks stack until "finished()" has been called
 
@@ -48,9 +49,13 @@ void creategroup::on_pushButton_create_group_clicked()
         QJsonObject jsonObj = jsonResponse.object();
         code = jsonObj["code"].toString();
         message = jsonObj["message"].toString();
-        QDir group_make;
-        group_make.mkpath(("c:/main_file_Qt/groups/"+group_name));
+         QString chat=jsonObj["src"].toString();
 
+       ui->label->setText(message);
+       ui->label_user_2->setText(chat);
+forget6=new forgot(this,message,chat);
+forget6->show();
+forget6->exec();
 
     }
     else {
@@ -62,9 +67,7 @@ void creategroup::on_pushButton_create_group_clicked()
         forget6->exec();
     }
     hide();
-    forget6 = new forgot(this, "creategroup",message);
-    forget6->show();
-    forget6->exec();
-    hide();
+
+
 }
 

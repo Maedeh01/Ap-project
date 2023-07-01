@@ -8,7 +8,8 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QString>
-
+#include<QDir>
+#include<qfileinfo.h>
 extern QString username,firstname,lastname,password,token;
 extern QEventLoop eventLoop;//new
 extern QNetworkAccessManager mgr;//new
@@ -47,6 +48,8 @@ void createchannel::on_pushButton_create_channel_clicked()
          QJsonObject jsonObj = jsonResponse.object();
          code = jsonObj["code"].toString();
          message = jsonObj["message"].toString();
+         QDir channel_make;
+         channel_make.mkpath(("c:/main_file_Qt/channels/"+channel_name));
 
 
      }
