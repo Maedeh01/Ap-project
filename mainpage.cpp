@@ -66,3 +66,11 @@ void mainpage::on_actionSend_message_2_triggered()
     send_message->exec();
 }
 
+
+void mainpage::on_actionCreate_triggered()
+{
+    Createchannel=new createchannel(this);
+    Createchannel->show();
+    Createchannel->exec();
+}
+

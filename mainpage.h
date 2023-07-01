@@ -5,7 +5,7 @@
 #include "logout.h"
 #include "join.h"
 #include "send_message.h"
-
+#include "createchannel.h"
 
 namespace Ui {
 class mainpage;
@@ -32,11 +32,14 @@ private slots:
 
     void on_actionSend_message_2_triggered();
 
+    void on_actionCreate_triggered();
+
 private:
     Ui::mainpage *ui;
     Logout *logout;
     join *Join2;
     Send_message *send_message;
+    createchannel*Createchannel;
 };
 
 #endif // MAINPAGE_H

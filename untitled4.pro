@@ -9,6 +9,7 @@ QT +=network
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    createchannel.cpp \
     forgot.cpp \
     join.cpp \
     logout.cpp \
@@ -19,6 +20,7 @@ SOURCES += \
     signup.cpp
 
 HEADERS += \
+    createchannel.h \
     forgot.h \
     join.h \
     logout.h \
@@ -28,6 +30,7 @@ HEADERS += \
     signup.h
 
 FORMS += \
+    createchannel.ui \
     forgot.ui \
     join.ui \
     logout.ui \
