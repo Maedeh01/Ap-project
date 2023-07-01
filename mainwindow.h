@@ -9,8 +9,13 @@
 #include <QJsonObject>
 #include <QString>
 #include <QMainWindow>
+#include <QCoreApplication>
+#include <QDir>
+#include <QFileInfo>
 #include "forgot.h"
 #include "signup.h"
+#include "logout.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -31,10 +36,13 @@ private slots:
 
     void on_pushButton_login_clicked();
 
+    void on_pushButton_Logout_clicked();
+
 private:
     Ui::MainWindow *ui;
     forgot *forget;
     Signup *signup;
     mainpage *Mainpage1;
+    Logout *logout_main;
 };
 #endif // MAINWINDOW_H

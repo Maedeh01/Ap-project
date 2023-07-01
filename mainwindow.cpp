@@ -10,6 +10,7 @@
 #include <QJsonObject>
 #include <QString>
 
+QDir G,C,U,main;
 QString username,firstname,lastname,password,token;
 QEventLoop eventLoop;//new
 QNetworkAccessManager mgr;//new
@@ -19,7 +20,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
+    main.mkpath("c:/main_file_Qt");
+    G.mkpath("c:/main_file_Qt/groups");
+    C.mkpath("c:/main_file_Qt/channels");
+    U.mkpath("c:/main_file_Qt/users");
 }
 
 MainWindow::~MainWindow()
@@ -77,12 +81,18 @@ void MainWindow::on_pushButton_login_clicked()
         delete reply;
     }
 
-    if( code == "200" ){
+    if( code == "200" && username != "" ){
         //go to list.
         hide();
-       Mainpage1 = new mainpage(this);
+        Mainpage1 = new mainpage(this);
         Mainpage1 ->show();
         //Mainpage1 ->exec();
+    }
+    else if (code == "200" && username == "" ){
+        hide();
+        forget = new forgot(this,"Error","Enter your\n username and password.");
+        forget->show();
+        forget->exec();
     }
     else if (code == "401" ){
         hide();
@@ -96,5 +106,14 @@ void MainWindow::on_pushButton_login_clicked()
         forget->show();
         forget->exec();
     }
+}
+
+
+void MainWindow::on_pushButton_Logout_clicked()
+{
+    hide();
+    logout_main = new Logout(this);
+    logout_main->show();
+    logout_main->exec();
 }
 

@@ -8,6 +8,9 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QString>
+#include <QCoreApplication>
+#include <QDir>
+#include <QFileInfo>
 
 extern QString username,firstname,lastname,password,token;
 extern QEventLoop eventLoop;//new
@@ -31,12 +34,11 @@ void join::on_pushButton_join_clicked()
 {
     QString code,message;
     if( type == "Group"){
-    QString name_group = ui->lineEdit_name_to_join->text();
+        QString name_group = ui->lineEdit_name_to_join->text();
         QObject::connect(&mgr, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
         QNetworkRequest req( QUrl( QString("http://api.barafardayebehtar.ml:8080/joingroup?token=" +token +"&group_name="+name_group) ) );
         QNetworkReply *reply = mgr.get(req);
         eventLoop.exec(); // blocks stack until "finished()" has been called
-
         if (reply->error() == QNetworkReply::NoError) {
 
             QString strReply = (QString)reply->readAll();
@@ -55,20 +57,23 @@ void join::on_pushButton_join_clicked()
             qDebug() << "Failure" <<reply->errorString();
             delete reply;
         }
-    hide();
-    forget3 = new forgot(this, "Join",message);
-    forget3->show();
-    forget3->exec();
-    hide();
+        if ( code == "200"){
+            QFile file("c:/main_file_Qt/groups/"+ name_group);
+        }
+        hide();
+        forget3 = new forgot(this, "Join",message);
+        forget3->show();
+        forget3->exec();
+        hide();
     }
     if( type == "Channel"){
-    QString name_channel = ui->lineEdit_name_to_join->text();
-    QObject::connect(&mgr, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
-    QNetworkRequest req( QUrl( QString("http://api.barafardayebehtar.ml:8080/joinchannel?token=" + token + "&channel_name="+ name_channel) ) );
-    QNetworkReply *reply = mgr.get(req);
-    eventLoop.exec(); // blocks stack until "finished()" has been called
+        QString name_channel = ui->lineEdit_name_to_join->text();
+        QObject::connect(&mgr, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
+        QNetworkRequest req( QUrl( QString("http://api.barafardayebehtar.ml:8080/joinchannel?token=" + token + "&channel_name="+ name_channel) ) );
+        QNetworkReply *reply = mgr.get(req);
+        eventLoop.exec(); // blocks stack until "finished()" has been called
 
-    if (reply->error() == QNetworkReply::NoError) {
+        if (reply->error() == QNetworkReply::NoError) {
 
             QString strReply = (QString)reply->readAll();
 
@@ -84,11 +89,14 @@ void join::on_pushButton_join_clicked()
             //failure
             qDebug() << "Failure" <<reply->errorString();
     }
-    hide();
-    forget3 = new forgot(this, "Join",message);
-    forget3->show();
-    forget3->exec();
-    hide();
+    if ( code == "200"){
+            QFile file("c:/main_file_Qt/channels/"+ name_channel);
+    }
+        hide();
+        forget3 = new forgot(this, "Join",message);
+        forget3->show();
+        forget3->exec();
+        hide();
     }
 }
 
