@@ -60,6 +60,12 @@
       <height>24</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>NPIRogheh</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>show</string>
     </property>

@@ -19,6 +19,7 @@ SOURCES += \
     mainpage.cpp \
     mainwindow.cpp \
     send_message.cpp \
+    show_message.cpp \
     signup.cpp
 
 HEADERS += \
@@ -31,6 +32,7 @@ HEADERS += \
     mainpage.h \
     mainwindow.h \
     send_message.h \
+    show_message.h \
     signup.h
 
 FORMS += \
@@ -44,6 +46,7 @@ FORMS += \
     mainpage.ui \
     mainwindow.ui \
     send_message.ui \
+    show_message.ui \
     signup.ui
 
 # Default rules for deployment.

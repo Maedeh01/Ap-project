@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Log out</string>
+   <string>Enter Yor information:</string>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
@@ -25,11 +25,11 @@
    <property name="title">
     <string/>
    </property>
-   <widget class="QPushButton" name="logout_pushButton">
+   <widget class="QPushButton" name="push_Button">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>140</y>
+      <x>100</x>
+      <y>150</y>
       <width>80</width>
       <height>18</height>
      </rect>
@@ -41,48 +41,50 @@
      </font>
     </property>
     <property name="text">
-     <string>Log out</string>
+     <string>OK</string>
     </property>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>60</x>
       <y>30</y>
-      <width>171</width>
-      <height>111</height>
+      <width>151</width>
+      <height>121</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="0">
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="firstl_label">
        <property name="font">
         <font>
          <family>MV Boli</family>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Username:</string>
+        <string>TextLabel</string>
        </property>
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLineEdit" name="LO_username_lineEdit"/>
+      <widget class="QLineEdit" name="first_lineEdit"/>
      </item>
      <item row="1" column="0">
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="second_label">
        <property name="font">
         <font>
          <family>MV Boli</family>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Password:</string>
+        <string>TextLabel</string>
        </property>
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="LO_password_lineEdit"/>
+      <widget class="QLineEdit" name="second_lineEdit"/>
      </item>
     </layout>
    </widget>

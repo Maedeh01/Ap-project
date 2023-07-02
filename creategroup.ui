@@ -22,12 +22,22 @@
      <height>261</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>MV Boli</family>
+    </font>
+   </property>
    <property name="title">
     <string>create group</string>
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <family>MV Boli</family>
+       </font>
+      </property>
       <property name="text">
        <string>groupname:</string>
       </property>

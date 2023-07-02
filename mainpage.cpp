@@ -15,8 +15,8 @@ mainpage::~mainpage()
 
 void mainpage::on_actionLogout_triggered()
 {
-    hide();
-    logout = new Logout(this);
+    //hide();
+    logout = new Logout(this,"Username:","Password:");
     logout ->show();
     logout->exec();
 }
@@ -24,7 +24,7 @@ void mainpage::on_actionLogout_triggered()
 
 void mainpage::on_actionJoin_2_triggered()
 {
-    hide();
+   // hide();
     Join2 = new join(this,"Group");
     Join2->show();
     Join2->exec();
@@ -33,7 +33,7 @@ void mainpage::on_actionJoin_2_triggered()
 
 void mainpage::on_actionJoin_triggered()
 {
-    hide();
+    //hide();
     Join2 = new join (this,"Channel");
     Join2->show();
     Join2->exec();
@@ -42,7 +42,7 @@ void mainpage::on_actionJoin_triggered()
 
 void mainpage::on_actionContacts_send_triggered()
 {
-    hide();
+    //hide();
     send_message = new Send_message(this,"user");
     send_message->show();
     send_message->exec();
@@ -51,7 +51,7 @@ void mainpage::on_actionContacts_send_triggered()
 
 void mainpage::on_actionSend_message_triggered()
 {
-    hide();
+   // hide();
     send_message = new Send_message(this,"channel");
     send_message->show();
     send_message->exec();
@@ -84,6 +84,30 @@ void mainpage::on_actionCreate_2_triggered()
 
 
 void mainpage::on_actionShow_my_chat_triggered()
+{
+    c_messege=new Logout(this,"Cotact name:","Date");
+    c_messege->show();
+    c_messege->exec();
+}
+
+
+void mainpage::on_actionChannel_messages_triggered()
+{
+    ch_messege=new Logout(this,"Channel name:","Date");
+    ch_messege->show();
+    ch_messege->exec();
+}
+
+
+void mainpage::on_actionMy_group_messages_triggered()
+{
+    g_messege=new Logout(this,"Group name:","Date");
+    g_messege->show();
+    g_messege->exec();
+}
+
+
+void mainpage::on_actionShow_my_users_triggered()
 {
     Getuserlist=new getuserlist(this);
     Getuserlist->show();

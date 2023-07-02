@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>338</width>
+    <height>313</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Hey! Welcome:)</string>
   </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
@@ -19,7 +19,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>338</width>
      <height>17</height>
     </rect>
    </property>
@@ -29,6 +29,7 @@
     </property>
     <addaction name="actionContacts_send"/>
     <addaction name="actionShow_my_chat"/>
+    <addaction name="actionShow_my_users"/>
    </widget>
    <widget class="QMenu" name="menuChannel">
     <property name="title">
@@ -52,7 +53,7 @@
    </widget>
    <widget class="QMenu" name="menuLog_out">
     <property name="title">
-     <string>Hey!Welcome:)</string>
+     <string>  </string>
     </property>
    </widget>
    <widget class="QMenu" name="menuExit">
@@ -61,11 +62,11 @@
     </property>
     <addaction name="actionLogout"/>
    </widget>
-   <addaction name="menuLog_out"/>
    <addaction name="menu"/>
    <addaction name="menuChannel"/>
    <addaction name="menuGroup"/>
    <addaction name="menuExit"/>
+   <addaction name="menuLog_out"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionContacts_send">
@@ -131,6 +132,11 @@
   <action name="actionLogout">
    <property name="text">
     <string>Logout</string>
+   </property>
+  </action>
+  <action name="actionShow_my_users">
+   <property name="text">
+    <string>Show my users</string>
    </property>
   </action>
  </widget>

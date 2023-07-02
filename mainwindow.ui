@@ -164,10 +164,16 @@
        <property name="geometry">
         <rect>
          <x>140</x>
-         <y>257</y>
+         <y>260</y>
          <width>111</width>
          <height>21</height>
         </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>NPIRogheh</family>
+         <pointsize>11</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>Log out</string>

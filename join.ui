@@ -22,6 +22,11 @@
      <height>151</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>MV Boli</family>
+    </font>
+   </property>
    <property name="title">
     <string>Join</string>
    </property>
@@ -34,11 +39,17 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>NPIRogheh</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Ok</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>

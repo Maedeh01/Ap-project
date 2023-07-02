@@ -22,6 +22,12 @@
      <height>291</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>MV Boli</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
    <property name="title">
     <string>get user list</string>
    </property>
@@ -33,6 +39,12 @@
       <width>191</width>
       <height>24</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>NPIRogheh</family>
+      <pointsize>11</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>show</string>
