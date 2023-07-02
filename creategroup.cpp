@@ -29,6 +29,7 @@ creategroup::~creategroup()
 void creategroup::on_pushButton_create_group_clicked()
 {
     QString group_name,group_title;
+    int number_of_groups=0;
     group_name=ui->lineEdit_group_name->text();
     group_title=ui->lineEdit_group_title->text();
     QString code,message;
@@ -48,9 +49,6 @@ void creategroup::on_pushButton_create_group_clicked()
         QJsonObject jsonObj = jsonResponse.object();
         code = jsonObj["code"].toString();
         message = jsonObj["message"].toString();
-        QDir group_make;
-        group_make.mkpath(("c:/main_file_Qt/groups/"+group_name));
-
 
     }
     else {
@@ -63,6 +61,7 @@ void creategroup::on_pushButton_create_group_clicked()
     }
 
 if(code=="200"){
+    number_of_groups++;
     QString address ="c:/main_file_Qt/groups/" + group_name + ".txt";
     QFile file(address);
     file.open(QIODevice::WriteOnly | QIODevice::Text |QIODevice::Append);

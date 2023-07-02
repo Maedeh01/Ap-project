@@ -26,9 +26,9 @@ getgrouplist::getgrouplist(QWidget *parent) :
     ui->setupUi(this);
     QString code,message;
     QObject::connect(&mgr, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
-    QNetworkRequest req( QUrl( QString("http://api.barafardayebehtar.ml:8080/getuserlist?token="+token) ) );
+    QNetworkRequest req( QUrl( QString("http://api.barafardayebehtar.ml:8080/getgrouplist?token="+token) ) );
     QNetworkReply *reply = mgr.get(req);
-    eventLoop.exec(); // blocks stack until "finished()" has been called
+    eventLoop.exec(); // blocks stack until "finished()" has been called=
 
     if (reply->error() == QNetworkReply::NoError) {
 
@@ -41,19 +41,38 @@ getgrouplist::getgrouplist(QWidget *parent) :
         QJsonObject jsonObj = jsonResponse.object();
         code = jsonObj["code"].toString();
         message = jsonObj["message"].toString();
-         QString chat=jsonObj["src"].toString();
 
-       ui->label_group_list_message->setText(message);
-       ui->label_group_list_chat->setText(chat);
-forget7=new forgot(this,message,chat);
-forget7->show();
-forget7->exec();
-hide();
+        ui->label_group_list_message->setText(message);
+         QString number_g="";
+        for(int i=13;message[i]!='-';i++){
+            number_g+=message[i];
+
+        }
+        int number;
+        number=number_g.toInt();
+QString p="";
+ QString chat;
+ while(number!=0){
+     QJsonValue val=jsonObj.value(QString("block"+QString::number(number)));
+     QJsonObject item=val.toObject();
+     QJsonValue subobj=item["group_name"];
+      chat=subobj.toString();
+      p+=chat;
+     //qDebug()<<chat<<"\n";
+
+     number--;
+
+ }
+ ui->label_group_list_chat->setText(p);
+
+
+;
 
     }
     else {
         //failure
-        qDebug() << "Failure" <<reply->errorString();
+
+        qDebug() <<"Failure"<<reply->errorString();
         delete reply;
         //forget6 = new forgot(this, "creategroup","failure");
         //forget6->show();

@@ -48,8 +48,6 @@ void createchannel::on_pushButton_create_channel_clicked()
          QJsonObject jsonObj = jsonResponse.object();
          code = jsonObj["code"].toString();
          message = jsonObj["message"].toString();
-         QDir channel_make;
-         channel_make.mkpath(("c:/main_file_Qt/channels/"+channel_name));
 
 
      }

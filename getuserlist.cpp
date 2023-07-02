@@ -23,15 +23,6 @@ getuserlist::getuserlist(QWidget *parent) :
     ui(new Ui::getuserlist)
 {
     ui->setupUi(this);
-}
-
-getuserlist::~getuserlist()
-{
-    delete ui;
-}
-
-void getuserlist::on_pushButton_show_userlist_clicked()
-{
     QString code,message;
     QObject::connect(&mgr, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
     QNetworkRequest req( QUrl( QString("http://api.barafardayebehtar.ml:8080/getuserlist?token="+token) ) );
@@ -49,23 +40,37 @@ void getuserlist::on_pushButton_show_userlist_clicked()
         QJsonObject jsonObj = jsonResponse.object();
         code = jsonObj["code"].toString();
         message = jsonObj["message"].toString();
-         QString chat=jsonObj["src"].toString();
-
        ui->label_user_list_message->setText(message);
-       ui->label_user_list_chat->setText(chat);
-forget6=new forgot(this,message,chat);
-forget6->show();
-forget6->exec();
-hide();
+        QString number_g;
+       for(int i=13;message[i]!='-';i++){
+
+
+               number_g+=message[i];
+
+       }
+       int number;
+       number=number_g.toInt();
+
+while(number!=0){
+    QJsonValue val=jsonObj.value(QString("block"+QString::number(number)));
+    QJsonObject item=val.toObject();
+    QJsonValue subobj=item["src"];
+    QString chat=subobj.toString();
+     ui->label_user_list_chat->setText(chat);
+    number--;
+}
+
+
+
+
+
 
     }
     else {
         //failure
         qDebug() << "Failure" <<reply->errorString();
         delete reply;
-        //forget6 = new forgot(this, "creategroup","failure");
-        //forget6->show();
-        //forget6->exec();
+
         QString new_add="c:/main_file_Qt/users/list.txt";
         QFile file2(new_add);
         file2.open(QFile::ReadOnly|QFile::Text);
@@ -79,5 +84,12 @@ hide();
 }
 
 }
+
+getuserlist::~getuserlist()
+{
+    delete ui;
+}
+
+
 
 
