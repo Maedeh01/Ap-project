@@ -12,6 +12,7 @@
 #include <QCoreApplication>
 #include <QDir>
 #include <QFileInfo>
+#include <QTimer>
 #include "forgot.h"
 #include "signup.h"
 #include "logout.h"
@@ -38,9 +39,9 @@ private slots:
 
     void on_pushButton_Logout_clicked();
 
-    void on_push_Button_clicked();
+//    void on_push_Button_clicked();
 
-    void on_logout_puhsButton_clicked();
+//    void on_logout_puhsButton_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -48,5 +49,6 @@ private:
     Signup *signup;
     mainpage *Mainpage1;
     Logout *logout_main;
+    QTimer *timer;
 };
 #endif // MAINWINDOW_H

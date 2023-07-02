@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(254, 237, 255);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
@@ -62,6 +65,10 @@
          <pointsize>11</pointsize>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 255);
+</string>
+       </property>
        <property name="text">
         <string>Sign up</string>
        </property>
@@ -77,10 +84,18 @@
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
-         <widget class="QLineEdit" name="LINEDIT_USERNAME"/>
+         <widget class="QLineEdit" name="LINEDIT_USERNAME">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 170, 255);</string>
+          </property>
+         </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="linedit_password"/>
+         <widget class="QLineEdit" name="linedit_password">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 170, 255);</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -98,6 +113,9 @@
          <family>NPIRogheh</family>
          <pointsize>12</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 255);</string>
        </property>
        <property name="text">
         <string>Forget your password</string>
@@ -117,6 +135,9 @@
          <family>NPIRogheh</family>
          <pointsize>11</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 255);</string>
        </property>
        <property name="text">
         <string>Log in</string>
@@ -174,6 +195,9 @@
          <family>NPIRogheh</family>
          <pointsize>11</pointsize>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 255);</string>
        </property>
        <property name="text">
         <string>Log out</string>

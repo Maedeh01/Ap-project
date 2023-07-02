@@ -46,6 +46,9 @@
       <pointsize>11</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 170, 255);</string>
+    </property>
     <property name="text">
      <string>Send</string>
     </property>
@@ -81,7 +84,11 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_dst"/>
+      <widget class="QLineEdit" name="lineEdit_dst">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 255);</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -103,7 +110,11 @@
       </widget>
      </item>
      <item>
-      <widget class="QTextEdit" name="textEdit_body"/>
+      <widget class="QTextEdit" name="textEdit_body">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 255);</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>

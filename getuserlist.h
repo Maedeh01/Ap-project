@@ -16,7 +16,7 @@ public:
     ~getuserlist();
 
 private slots:
-    void on_pushButton_show_userlist_clicked();
+//    void on_pushButton_show_userlist_clicked();
 
 private:
     Ui::getuserlist *ui;

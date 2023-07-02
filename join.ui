@@ -45,6 +45,9 @@
       <pointsize>11</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 170, 255);</string>
+    </property>
     <property name="text">
      <string>Ok</string>
     </property>
@@ -67,7 +70,11 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_name_to_join"/>
+      <widget class="QLineEdit" name="lineEdit_name_to_join">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 255);</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>

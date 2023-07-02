@@ -14,7 +14,8 @@
    <string>Sign up</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="applications-office"/>
+   <iconset theme="applications-office">
+    <normaloff>.</normaloff>.</iconset>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
@@ -39,16 +40,32 @@
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QLineEdit" name="lineEdit_firstname"/>
+      <widget class="QLineEdit" name="lineEdit_firstname">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 255);</string>
+       </property>
+      </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_lastname"/>
+      <widget class="QLineEdit" name="lineEdit_lastname">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 255);</string>
+       </property>
+      </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_username"/>
+      <widget class="QLineEdit" name="lineEdit_username">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 255);</string>
+       </property>
+      </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_password"/>
+      <widget class="QLineEdit" name="lineEdit_password">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 255);</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -126,6 +143,9 @@
     <font>
      <family>NPIRogheh</family>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 170, 255);</string>
    </property>
    <property name="text">
     <string>OK</string>

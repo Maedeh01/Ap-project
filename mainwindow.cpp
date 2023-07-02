@@ -98,10 +98,13 @@ void MainWindow::on_pushButton_login_clicked()
         Mainpage1 = new mainpage(this);
         Mainpage1 ->show();
         //Mainpage1 ->exec();
+        timer = new QTimer();
+        connect(timer,SIGNAL(timeout()),this,SLOT(update_user()));
+        timer->start(5000);
     }
     else if (code == "200" && username == "" ){
        // hide();
-        forget = new forgot(this,"Error","Enter your\n username and password.");
+        forget = new forgot(this,"Error","Enter your\nusername and password.");
         forget->show();
         forget->exec();
     }
@@ -133,3 +136,28 @@ void MainWindow::on_pushButton_Logout_clicked()
 
 }
 
+void update_user(){
+    QString code,message;
+    QObject::connect(&mgr, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
+    QNetworkRequest req( QUrl( QString("http://api.barafardayebehtar.ml:8080/getuserchats?token="+token+"&dst="+dst+"&date=20230701010101") ) );
+    QNetworkReply *reply = mgr.get(req);
+    eventLoop.exec(); // blocks stack until "finished()" has been called
+    if (reply->error() == QNetworkReply::NoError) {
+
+        QString strReply = (QString)reply->readAll();
+
+        //parse json
+        qDebug() << "Response:" << strReply;
+        QJsonDocument jsonResponse = QJsonDocument::fromJson(strReply.toUtf8());
+
+        QJsonObject jsonObj = jsonResponse.object();
+        code = jsonObj["code"].toString();
+        message = jsonObj["message"].toString();
+        delete reply;
+    }
+    else {
+        //failure
+        qDebug() << "Failure" <<reply->errorString();
+        delete reply;
+    }
+}

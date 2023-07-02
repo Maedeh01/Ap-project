@@ -82,8 +82,8 @@ while(number!=0){
             line=in.readLine();
     }
 }
-
 }
+
 
 getuserlist::~getuserlist()
 {

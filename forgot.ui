@@ -27,6 +27,9 @@
      <family>MV Boli</family>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(170, 0, 127);</string>
+   </property>
    <property name="text">
     <string>TextLabel</string>
    </property>
@@ -44,6 +47,9 @@
     <font>
      <family>MV Boli</family>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(170, 0, 127);</string>
    </property>
    <property name="text">
     <string>TextLabel</string>

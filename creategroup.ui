@@ -44,7 +44,11 @@
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QLineEdit" name="lineEdit_group_name"/>
+     <widget class="QLineEdit" name="lineEdit_group_name">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 170, 255);</string>
+      </property>
+     </widget>
     </item>
     <item row="1" column="0">
      <widget class="QLabel" name="label_2">
@@ -54,10 +58,19 @@
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QLineEdit" name="lineEdit_group_title"/>
+     <widget class="QLineEdit" name="lineEdit_group_title">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 170, 255);</string>
+      </property>
+     </widget>
     </item>
     <item row="2" column="1">
      <widget class="QPushButton" name="pushButton_create_group">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 170, 255);
+
+</string>
+      </property>
       <property name="text">
        <string>create</string>
       </property>
