@@ -41,12 +41,22 @@ void Send_message::on_pushButton_ok_send_clicked()
     if(type == "user"){
         QNetworkRequest req( QUrl( QString("http://api.barafardayebehtar.ml:8080/sendmessageuser?token="+ token +"&dst="+dst +"&body="+ body) ) );
         reply = mgr.get(req);
-        QString address ="c:/main_file_Qt/users/" + dst + ".txt";
-        QFile file(address);
-        file.open(QIODevice::WriteOnly | QIODevice::Text |QIODevice::Append);
-        QTextStream out(&file);
-        out << "You:\n" << body << "\n";
-        file.close();
+        if(code=="200"){
+            QString address ="c:/main_file_Qt/users/" + dst + ".txt";
+            QFile file(address);
+            file.open(QIODevice::WriteOnly | QIODevice::Text |QIODevice::Append);
+            QTextStream out(&file);
+            out << "You:\n" << body << "\n";
+            file.close();
+
+            QString new_add="c:/main_file_Qt/users/list.txt";
+            QFile file2(new_add);
+            file2.open(QIODevice::WriteOnly | QIODevice::Text |QIODevice::Append);
+            QTextStream out2(&file2);
+            out2<<dst<<"\n";
+            file2.flush();
+            file2.close();
+        }
     }
     else if (type == "group"){
         QNetworkRequest req( QUrl( QString("http://api.barafardayebehtar.ml:8080/sendmessagegroup?token=" + token +"&dst=" + dst +"&body="+ body) ) );

@@ -61,6 +61,22 @@ void creategroup::on_pushButton_create_group_clicked()
         forget6->show();
         forget6->exec();
     }
+
+if(code=="200"){
+    QString address ="c:/main_file_Qt/groups/" + group_name + ".txt";
+    QFile file(address);
+    file.open(QIODevice::WriteOnly | QIODevice::Text |QIODevice::Append);
+    QTextStream out(&file);
+
+    file.close();
+    QString new_add="c:/main_file_Qt/groups/groupname.txt";
+    QFile file2(new_add);
+    file2.open(QIODevice::WriteOnly | QIODevice::Text |QIODevice::Append);
+    QTextStream out2(&file2);
+    out2<<group_name<<"\n";
+    file2.flush();
+    file2.close();
+}
     hide();
     forget6 = new forgot(this, "creategroup",message);
     forget6->show();

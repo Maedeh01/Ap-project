@@ -1,3 +1,5 @@
+#include "getgrouplist.h"
+#include "ui_getgrouplist.h"
 #include "getuserlist.h"
 #include "ui_getuserlist.h"
 #include "creategroup.h"
@@ -14,24 +16,14 @@
 #include <QString>
 #include<QDir>
 #include<qfileinfo.h>
-
 extern QString token;
 extern QEventLoop eventLoop;//new
 extern QNetworkAccessManager mgr;//new
-getuserlist::getuserlist(QWidget *parent) :
+getgrouplist::getgrouplist(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::getuserlist)
+    ui(new Ui::getgrouplist)
 {
     ui->setupUi(this);
-}
-
-getuserlist::~getuserlist()
-{
-    delete ui;
-}
-
-void getuserlist::on_pushButton_show_userlist_clicked()
-{
     QString code,message;
     QObject::connect(&mgr, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
     QNetworkRequest req( QUrl( QString("http://api.barafardayebehtar.ml:8080/getuserlist?token="+token) ) );
@@ -51,11 +43,11 @@ void getuserlist::on_pushButton_show_userlist_clicked()
         message = jsonObj["message"].toString();
          QString chat=jsonObj["src"].toString();
 
-       ui->label_user_list_message->setText(message);
-       ui->label_user_list_chat->setText(chat);
-forget6=new forgot(this,message,chat);
-forget6->show();
-forget6->exec();
+       ui->label_group_list_message->setText(message);
+       ui->label_group_list_chat->setText(chat);
+forget7=new forgot(this,message,chat);
+forget7->show();
+forget7->exec();
 hide();
 
     }
@@ -66,18 +58,20 @@ hide();
         //forget6 = new forgot(this, "creategroup","failure");
         //forget6->show();
         //forget6->exec();
-        QString new_add="c:/main_file_Qt/users/list.txt";
+        QString new_add="c:/main_file_Qt/groups/groupname.txt";
         QFile file2(new_add);
         file2.open(QFile::ReadOnly|QFile::Text);
         QTextStream in(&file2);
         QString line=in.readLine();
-        ui->label_user_list_message->setText("failure");
+        ui->label_group_list_message->setText("failure");
         while(!line.isNull()){
-            ui->label_user_list_chat->setText(line);
+            ui->label_group_list_chat->setText(line);
             line=in.readLine();
     }
 }
-
 }
 
-
+getgrouplist::~getgrouplist()
+{
+    delete ui;
+}

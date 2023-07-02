@@ -9,6 +9,7 @@
 #include "creategroup.h"
 #include"getuserlist.h"
 #include "logout.h"
+#include"getgrouplist.h"
 namespace Ui {
 class mainpage;
 }
@@ -46,6 +47,8 @@ private slots:
 
     void on_actionShow_my_users_triggered();
 
+    void on_actionMy_groups_triggered();
+
 private:
     Ui::mainpage *ui;
     Logout *logout;
@@ -57,6 +60,7 @@ private:
     Logout *ch_messege;
      Logout *c_messege;
      Logout *g_messege;
+     getgrouplist*Getgrouplist;
 };
 
 #endif // MAINPAGE_H

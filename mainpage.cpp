@@ -114,3 +114,11 @@ void mainpage::on_actionShow_my_users_triggered()
     Getuserlist->exec();
 }
 
+
+void mainpage::on_actionMy_groups_triggered()
+{
+    Getgrouplist=new getgrouplist(this);
+    Getgrouplist->show();
+    Getgrouplist->exec();
+}
+

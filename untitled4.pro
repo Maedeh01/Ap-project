@@ -12,6 +12,7 @@ SOURCES += \
     createchannel.cpp \
     creategroup.cpp \
     forgot.cpp \
+    getgrouplist.cpp \
     getuserlist.cpp \
     join.cpp \
     logout.cpp \
@@ -26,6 +27,7 @@ HEADERS += \
     createchannel.h \
     creategroup.h \
     forgot.h \
+    getgrouplist.h \
     getuserlist.h \
     join.h \
     logout.h \

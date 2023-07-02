@@ -58,6 +58,21 @@ void createchannel::on_pushButton_create_channel_clicked()
          qDebug() << "Failure" <<reply->errorString();
          delete reply;
      }
+     if(code=="200"){
+         QString address ="c:/main_file_Qt/channels/" + channel_name + ".txt";
+         QFile file(address);
+         file.open(QIODevice::WriteOnly | QIODevice::Text |QIODevice::Append);
+         QTextStream out(&file);
+
+         file.close();
+         QString new_add="c:/main_file_Qt/channels/channelname.txt";
+         QFile file2(new_add);
+         file2.open(QIODevice::WriteOnly | QIODevice::Text |QIODevice::Append);
+         QTextStream out2(&file2);
+         out2<<channel_name<<"\n";
+         file2.flush();
+         file2.close();
+     }
      hide();
      forget5 = new forgot(this, "createchannel",message);
      forget5->show();
