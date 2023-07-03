@@ -8,6 +8,15 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QString>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QUrl>
+#include <QDebug>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QString>
+#include<QDir>
+#include<qfileinfo.h>
 #include <QCoreApplication>
 #include <QDir>
 #include <QFileInfo>
@@ -132,6 +141,7 @@ void join::on_pushButton_join_clicked()
                 if (file.open(QFile::ReadOnly|QFile::Text)){
                     body=file.readAll();
                     ///////////////////////////////////////////////////////////////////should have a loop
+
                     hide();
                     msg=new show_message(this,"Channel "+dst,src+"\n"+body);
                     msg->show();

@@ -53,7 +53,7 @@
    </widget>
    <widget class="QMenu" name="menuLog_out">
     <property name="title">
-     <string>  </string>
+     <string/>
     </property>
    </widget>
    <widget class="QMenu" name="menuExit">
@@ -70,71 +70,127 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionContacts_send">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-send-50.png</normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-send-50.png</iconset>
+   </property>
    <property name="text">
     <string>Send message</string>
    </property>
   </action>
   <action name="actionShow_my_chat">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-message-80.png</normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-message-80.png</iconset>
+   </property>
    <property name="text">
     <string>Show my chat </string>
    </property>
   </action>
   <action name="actionCreate">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-channel-50(3).png</normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-channel-50(3).png</iconset>
+   </property>
    <property name="text">
     <string>Create </string>
    </property>
   </action>
   <action name="actionJoin">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-communication-64.png</normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-communication-64.png</iconset>
+   </property>
    <property name="text">
     <string>Join</string>
    </property>
   </action>
   <action name="actionChannels_list">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-channel-50(1).png</normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-channel-50(1).png</iconset>
+   </property>
    <property name="text">
     <string>My channels</string>
    </property>
   </action>
   <action name="actionChannel_messages">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-message-80.png</normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-message-80.png</iconset>
+   </property>
    <property name="text">
     <string>My channel messages</string>
    </property>
   </action>
   <action name="actionSend_message">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-send-50.png</normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-send-50.png</iconset>
+   </property>
    <property name="text">
     <string>Send message </string>
    </property>
   </action>
   <action name="actionCreate_2">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-add-male-user-group-64.png</normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-add-male-user-group-64.png</iconset>
+   </property>
    <property name="text">
     <string>Create</string>
    </property>
   </action>
   <action name="actionJoin_2">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-communication-64.png</normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-communication-64.png</iconset>
+   </property>
    <property name="text">
     <string>Join</string>
    </property>
   </action>
   <action name="actionMy_groups">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-group-80.png</normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-group-80.png</iconset>
+   </property>
    <property name="text">
     <string>My groups</string>
    </property>
   </action>
   <action name="actionMy_group_messages">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-message-80.png</normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-message-80.png</iconset>
+   </property>
    <property name="text">
     <string>My group messages</string>
    </property>
   </action>
   <action name="actionSend_message_2">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-send-50.png</normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-send-50.png</iconset>
+   </property>
    <property name="text">
     <string>Send message</string>
    </property>
   </action>
   <action name="actionLogout">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-logout-80.png</normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-logout-80.png</iconset>
+   </property>
    <property name="text">
     <string>Logout</string>
    </property>
   </action>
   <action name="actionShow_my_users">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-contacts-80.png</normaloff>C:/Users/KOWSAR 0201/Downloads/icons8-contacts-80.png</iconset>
+   </property>
    <property name="text">
     <string>Show my users</string>
    </property>

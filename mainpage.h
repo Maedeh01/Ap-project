@@ -10,6 +10,7 @@
 #include"getuserlist.h"
 #include "logout.h"
 #include"getgrouplist.h"
+#include "getchannellist.h"
 namespace Ui {
 class mainpage;
 }
@@ -49,6 +50,8 @@ private slots:
 
     void on_actionMy_groups_triggered();
 
+    void on_actionChannels_list_triggered();
+
 private:
     Ui::mainpage *ui;
     Logout *logout;
@@ -61,6 +64,7 @@ private:
      join *c_messege;
      join *g_messege;
      getgrouplist*Getgrouplist;
+     getchannellist *Getchannellist;
 };
 
 #endif // MAINPAGE_H

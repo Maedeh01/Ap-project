@@ -12,6 +12,7 @@ SOURCES += \
     createchannel.cpp \
     creategroup.cpp \
     forgot.cpp \
+    getchannellist.cpp \
     getgrouplist.cpp \
     getuserlist.cpp \
     join.cpp \
@@ -27,6 +28,7 @@ HEADERS += \
     createchannel.h \
     creategroup.h \
     forgot.h \
+    getchannellist.h \
     getgrouplist.h \
     getuserlist.h \
     join.h \
@@ -41,6 +43,7 @@ FORMS += \
     createchannel.ui \
     creategroup.ui \
     forgot.ui \
+    getchannellist.ui \
     getgrouplist.ui \
     getuserlist.ui \
     join.ui \

@@ -122,3 +122,11 @@ void mainpage::on_actionMy_groups_triggered()
     Getgrouplist->exec();
 }
 
+
+void mainpage::on_actionChannels_list_triggered()
+{
+    Getchannellist=new getchannellist(this);
+    Getchannellist->show();
+    Getchannellist->exec();
+}
+
