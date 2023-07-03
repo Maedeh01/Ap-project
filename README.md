@@ -4,7 +4,8 @@ Hello.
 In this project, we have a sign-in sign-out page to enter.
 A page like the picture below:
 
-<img width="196" alt="send message" src="https://github.com/Maedeh01/Messenger_StarStruct/assets/125665261/ea88435a-0146-4da2-abca-ca97033db424">
+<img width="315" alt="login" src="https://github.com/Maedeh01/Messenger_StarStruct/assets/125665261/42ccbc0c-d7b4-4b43-b04a-384d0b273c87">
+
 
 After entering, the main page will open for selection, like the following page:
 
