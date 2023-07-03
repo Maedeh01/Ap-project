@@ -57,9 +57,9 @@ private:
     createchannel*Createchannel;
     creategroup*Creategroup;
     getuserlist*Getuserlist;
-    Logout *ch_messege;
-     Logout *c_messege;
-     Logout *g_messege;
+  join *ch_messege;
+     join *c_messege;
+     join *g_messege;
      getgrouplist*Getgrouplist;
 };
 

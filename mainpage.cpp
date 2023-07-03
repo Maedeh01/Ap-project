@@ -81,11 +81,11 @@ void mainpage::on_actionCreate_2_triggered()
     Creategroup->show();
     Creategroup->exec();
 }
-
+//////////////////////////////////////////////////////////////////
 
 void mainpage::on_actionShow_my_chat_triggered()
 {
-    c_messege=new Logout(this,"Cotact name:","Date");
+    c_messege=new join(this,"Cotact name:");
     c_messege->show();
     c_messege->exec();
 }
@@ -93,7 +93,7 @@ void mainpage::on_actionShow_my_chat_triggered()
 
 void mainpage::on_actionChannel_messages_triggered()
 {
-    ch_messege=new Logout(this,"Channel name:","Date");
+    ch_messege=new join(this,"Channel name:");
     ch_messege->show();
     ch_messege->exec();
 }
@@ -101,11 +101,11 @@ void mainpage::on_actionChannel_messages_triggered()
 
 void mainpage::on_actionMy_group_messages_triggered()
 {
-    g_messege=new Logout(this,"Group name:","Date");
+    g_messege=new join(this,"Group name:");
     g_messege->show();
     g_messege->exec();
 }
-
+///////////////////////////////////////////////////////////////////
 
 void mainpage::on_actionShow_my_users_triggered()
 {

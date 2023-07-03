@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "forgot.h"
+#include "show_message.h"
 
 namespace Ui {
 class join;
@@ -14,6 +15,31 @@ class join : public QDialog
     QString type;
 public:
     explicit join(QWidget *parent = nullptr,QString lable=nullptr);
+    //void othercodes(QString code);
+    void othercodes(QString code,QString message){
+
+        //if other json codes
+
+        //show_message *msg;
+        if (code == "401" ){
+            //hide();
+            warning = new forgot(this,"Error",message);
+            warning->show();
+            warning->exec();
+        }
+        else if (code == "404" ){
+            hide();
+            warning = new forgot(this,"Error",message);
+            warning->show();
+            warning->exec();
+        }
+        else if (code=="204"){
+            hide();
+            warning = new forgot(this,"Error",message);
+            warning->show();
+            warning->exec();
+        }
+    }
     ~join();
 
 private slots:
@@ -22,6 +48,8 @@ private slots:
 private:
     Ui::join *ui;
     forgot *forget3;
+    show_message *msg;
+    forgot *warning;
 };
 
 #endif // JOIN_H
