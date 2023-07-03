@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>GroupBox</string>
+    <string>Channel list</string>
    </property>
    <widget class="QLabel" name="label_channel_list_chat">
     <property name="geometry">

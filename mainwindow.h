@@ -28,6 +28,7 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
+    friend void update_user();
     ~MainWindow();
 
 private slots:

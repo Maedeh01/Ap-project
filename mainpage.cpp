@@ -60,7 +60,7 @@ void mainpage::on_actionSend_message_triggered()
 
 void mainpage::on_actionSend_message_2_triggered()
 {
-    hide();
+//    hide();
     send_message = new Send_message(this,"group");
     send_message->show();
     send_message->exec();
