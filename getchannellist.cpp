@@ -32,7 +32,7 @@ getchannellist::getchannellist(QWidget *parent) :
     ui(new Ui::getchannellist)
 {
     ui->setupUi(this);
-    setWindowTitle("Getting group list");
+    setWindowTitle("Getting channel list");
     QString code,message;
     QObject::connect(&mgr, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
     QNetworkRequest req( QUrl( QString("http://api.barafardayebehtar.ml:8080/getchannellist?token="+token) ) );

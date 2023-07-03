@@ -6,7 +6,7 @@ forgot::forgot(QWidget *parent,QString titletext,QString massagetext) :
     ui(new Ui::forgot)
 {
     ui->setupUi(this);
-    setWindowTitle("forgot password");
+    //setWindowTitle("forgot password");
     ui->label_title->setText(titletext);
     ui->label_massage->setText(massagetext);
 }

@@ -130,9 +130,36 @@ void join::on_pushButton_join_clicked()
                 QJsonObject jsonObj = jsonResponse.object();
                 code= jsonObj["code"].toString();
                 message= jsonObj["message"].toString();
-                body=jsonObj["body"].toString();
-                src=jsonObj["src"].toString();
+               //body=jsonObj["body"].toString();
+                //src=jsonObj["src"].toString();
+                QString number_g;
+               for(int i=11;message[i]!='-';i++){
 
+
+                       number_g+=message[i];
+
+               }
+               int number;
+               number=number_g.toInt();
+        number--;
+        QString p="";
+        while(number!=-1){
+            QJsonValue val=jsonObj.value(QString("block "+QString::number(number)));
+            QJsonObject item=val.toObject();
+            QJsonValue subobj=item["src"];
+            QString src=subobj.toString();
+            QJsonValue subobj_b=item["body"];
+            QJsonValue subobj_ds=item["dst"];
+            QJsonValue subobj_da=item["date"];
+            QString dst2=subobj_ds.toString();
+            QString body=subobj_b.toString();
+            QString date=subobj_da.toString();
+             p+=dst2+":"+body+"\n"+"in date"+"\n"+date+"\n";
+            number--;
+        }
+        msg=new show_message(this,message,p);
+        msg->show();
+        msg->exec();
             }
             else if (reply->errorString()=="Host api.barafardayebehtar.ml not found") {
                 //ofline mode
@@ -154,13 +181,13 @@ void join::on_pushButton_join_clicked()
                 qDebug() << "Failure" <<reply->errorString();
                 delete reply;
             }
-            if( code == "200" ){
+            /*if( code == "200" ){
                 hide();
                 msg=new show_message(this,"Channel "+dst,src+"\n"+body);
                 msg->show();
                 msg->exec();
 
-            }
+            }*/
             othercodes(code,message);
         }
 
@@ -184,9 +211,39 @@ void join::on_pushButton_join_clicked()
             QJsonObject jsonObj = jsonResponse.object();
             code = jsonObj["code"].toString();
             message = jsonObj["message"].toString();
-            body=jsonObj["body"].toString();
-            src=jsonObj["src"].toString();
+           // body=jsonObj["body"].toString();
+            //src=jsonObj["src"].toString();
+            QString number_g;
+           for(int i=11;message[i]!='-';i++){
+
+
+                   number_g+=message[i];
+
+           }
+           int number;
+           number=number_g.toInt();
+    number--;
+    QString p="";
+
+    while(number!=-1){
+        QJsonValue val=jsonObj.value(QString("block "+QString::number(number)));
+        QJsonObject item=val.toObject();
+        QJsonValue subobj=item["src"];
+        QString src=subobj.toString();
+        QJsonValue subobj_b=item["body"];
+        QJsonValue subobj_ds=item["dst"];
+        QJsonValue subobj_da=item["date"];
+        QString dst2=subobj_ds.toString();
+        QString body=subobj_b.toString();
+        QString date=subobj_da.toString();
+          p+=dst2+":"+body+"\n"+"in date"+"\n"+date+"\n";
+        number--;
+    }
+    msg=new show_message(this,message,p);
+    msg->show();
+    msg->exec();
         }
+
         else if (reply->errorString()=="Host api.barafardayebehtar.ml not found") {
             //ofline mode
             qDebug() <<" You are offline!";
@@ -203,13 +260,13 @@ void join::on_pushButton_join_clicked()
                 qDebug() << "Failure" <<reply->errorString();
                 delete reply;
             }
-            if( code == "200" ){
+           /* if( code == "200" ){
                 hide();
                 msg=new show_message(this,"Group "+dst,src+"\n"+body);
                 msg->show();
                 msg->exec();
                 ///////////////////////////////////////////
-            }
+            }*/
             othercodes(code,message);
 
     }
@@ -236,6 +293,35 @@ void join::on_pushButton_join_clicked()
             message = jsonObj["message"].toString();
             body=jsonObj["body"].toString();
             src=jsonObj["src"].toString();
+            QString number_g;
+           for(int i=11;message[i]!='-';i++){
+
+
+                   number_g+=message[i];
+
+           }
+           int number;
+           number=number_g.toInt();
+    number--;
+    QString p="";
+
+    while(number!=-1){
+        QJsonValue val=jsonObj.value(QString("block "+QString::number(number)));
+        QJsonObject item=val.toObject();
+        QJsonValue subobj=item["src"];
+        QString src=subobj.toString();
+        QJsonValue subobj_b=item["body"];
+        QJsonValue subobj_ds=item["dst"];
+        QJsonValue subobj_da=item["date"];
+        QString dst2=subobj_ds.toString();
+        QString body=subobj_b.toString();
+        QString date=subobj_da.toString();
+         p+=dst2+":"+body+"\n"+"in date"+"\n"+date+"\n";
+        number--;
+    }
+    msg=new show_message(this,message,p);
+    msg->show();
+    msg->exec();
         }
         else if (reply->errorString()=="Host api.barafardayebehtar.ml not found") {
             //ofline mode
@@ -254,13 +340,13 @@ void join::on_pushButton_join_clicked()
             qDebug() << "Failure" <<reply->errorString();
             delete reply;
         }
-        if( code == "200" ){
+        /*if( code == "200" ){
             hide();
             msg=new show_message(this,"User "+dst,src+"\n"+body);
             msg->show();
             msg->exec();
 
-        }
+        }*/
         othercodes(code,message);
     }
     }
