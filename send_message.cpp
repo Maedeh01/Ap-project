@@ -22,6 +22,7 @@ Send_message::Send_message(QWidget *parent, QString t) :
     ui(new Ui::Send_message)
 {
     ui->setupUi(this);
+    setWindowTitle("sending message");
     type = t;
     ui->label_type_send->setText(t);
 }

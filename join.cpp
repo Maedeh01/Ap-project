@@ -22,6 +22,7 @@ join::join(QWidget *parent, QString lable) :
     ui(new Ui::join)
 {
     ui->setupUi(this);
+
     ui->label_group_or_channel->setText(lable);
     type = lable;
 }

@@ -24,6 +24,7 @@ getgrouplist::getgrouplist(QWidget *parent) :
     ui(new Ui::getgrouplist)
 {
     ui->setupUi(this);
+    setWindowTitle("getting group list");
     QString code,message;
     QObject::connect(&mgr, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
     QNetworkRequest req( QUrl( QString("http://api.barafardayebehtar.ml:8080/getgrouplist?token="+token) ) );
@@ -44,20 +45,21 @@ getgrouplist::getgrouplist(QWidget *parent) :
 
         ui->label_group_list_message->setText(message);
          QString number_g="";
-        for(int i=13;message[i]!='-';i++){
+        for(int i=12;message[i]!='-';i++){
             number_g+=message[i];
 
         }
         int number;
         number=number_g.toInt();
 QString p="";
+number--;
  QString chat;
- while(number!=0){
-     QJsonValue val=jsonObj.value(QString("block"+QString::number(number)));
+ while(number!=-1){
+     QJsonValue val=jsonObj.value(QString("block "+QString::number(number)));
      QJsonObject item=val.toObject();
      QJsonValue subobj=item["group_name"];
       chat=subobj.toString();
-      p+=chat;
+      p+=chat+"\n";
      //qDebug()<<chat<<"\n";
 
      number--;

@@ -22,7 +22,9 @@ getuserlist::getuserlist(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::getuserlist)
 {
+
     ui->setupUi(this);
+    setWindowTitle("getting user list");
     QString code,message;
     QObject::connect(&mgr, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
     QNetworkRequest req( QUrl( QString("http://api.barafardayebehtar.ml:8080/getuserlist?token="+token) ) );
@@ -42,7 +44,7 @@ getuserlist::getuserlist(QWidget *parent) :
         message = jsonObj["message"].toString();
        ui->label_user_list_message->setText(message);
         QString number_g;
-       for(int i=13;message[i]!='-';i++){
+       for(int i=20;message[i]!='-';i++){
 
 
                number_g+=message[i];
@@ -50,16 +52,17 @@ getuserlist::getuserlist(QWidget *parent) :
        }
        int number;
        number=number_g.toInt();
-
-while(number!=0){
-    QJsonValue val=jsonObj.value(QString("block"+QString::number(number)));
+number--;
+QString p="";
+while(number!=-1){
+    QJsonValue val=jsonObj.value(QString("block "+QString::number(number)));
     QJsonObject item=val.toObject();
     QJsonValue subobj=item["src"];
     QString chat=subobj.toString();
-     ui->label_user_list_chat->setText(chat);
+     p+=chat+"\n";
     number--;
 }
-
+ui->label_user_list_chat->setText(p);
 
 
 

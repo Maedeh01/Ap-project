@@ -19,6 +19,7 @@ creategroup::creategroup(QWidget *parent) :
     ui(new Ui::creategroup)
 {
     ui->setupUi(this);
+    setWindowTitle("creating group");
 }
 
 creategroup::~creategroup()
@@ -68,7 +69,7 @@ if(code=="200"){
     QTextStream out(&file);
 
     file.close();
-    QString new_add="c:/main_file_Qt/groups/groupname.txt";
+    QString new_add="c:/main_file_Qt/groups/list.txt";
     QFile file2(new_add);
     file2.open(QIODevice::WriteOnly | QIODevice::Text |QIODevice::Append);
     QTextStream out2(&file2);

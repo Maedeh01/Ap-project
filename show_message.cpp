@@ -6,6 +6,7 @@ show_message::show_message(QWidget *parent,QString name,QString msgbox) :
     ui(new Ui::show_message)
 {
     ui->setupUi(this);
+    setWindowTitle("your message");
     ui->name->setText(name);
     ui->msg_box->setText(msgbox);
 }

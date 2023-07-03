@@ -18,6 +18,7 @@ createchannel::createchannel(QWidget *parent) :
     ui(new Ui::createchannel)
 {
     ui->setupUi(this);
+    setWindowTitle("creating channel");
 }
 
 createchannel::~createchannel()
@@ -63,7 +64,7 @@ void createchannel::on_pushButton_create_channel_clicked()
          QTextStream out(&file);
 
          file.close();
-         QString new_add="c:/main_file_Qt/channels/channelname.txt";
+         QString new_add="c:/main_file_Qt/channels/list.txt";
          QFile file2(new_add);
          file2.open(QIODevice::WriteOnly | QIODevice::Text |QIODevice::Append);
          QTextStream out2(&file2);
